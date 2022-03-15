@@ -979,3 +979,381 @@ Processing by DeviseTokenAuth::SessionsController#destroy as */*
 Completed 200 OK in 146ms (Views: 0.2ms | ActiveRecord: 14.0ms | Allocations: 7454)
 
 
+Started POST "/auth/v1/user/sign_in" for ::1 at 2022-03-03 22:07:29 -0300
+  [1m[35m (39.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"test@test.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (35.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "test@test.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (25.8ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"0jZp2M-6Thi0GEWFpGAbiQ\\\":{\\\"token\\\":\\\"$2a$10$bWemrDCO9rhjtBh/LfkIuuVXw0URO1/5.nmeUkPD7evMITLq8kgga\\\",\\\"expiry\\\":1646946355,\\\"last_token\\\":\\\"$2a$10$CV6jg1cr4ZOSFimMfKTBsO4bt90vQTm1r5MCkHfDA4Kx8z/gE.toy\\\",\\\"updated_at\\\":\\\"2022-03-03T21:05:55Z\\\"},\\\"BXkAt1Sm8SsUHF-ufCRwyQ\\\":{\\\"token\\\":\\\"$2a$10$CuSq3nPWveblJKGwXhcvkOnpqXTB1w.dff9kS2pG1yNCvOmcrCwru\\\",\\\"expiry\\\":1646946373,\\\"last_token\\\":\\\"$2a$10$sRRRPpoc0V1phat3MSEWn.b0EBJknQzJFRjfKbzm/tCxVG711gW9.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:06:13Z\\\"},\\\"kjoFzYDKPk3k0OqW8Ef8CA\\\":{\\\"token\\\":\\\"$2a$10$KJs95FoZFf04UCDUagaXPO4.XG/r.tadtJ4.R.e64tqnLHYOL8LZ6\\\",\\\"expiry\\\":1646946426,\\\"last_token\\\":\\\"$2a$10$2VB5fkphiXtjPgOhWcq5leqNLdIG07X20uAUAn4791fgD6uGtzFPu\\\",\\\"updated_at\\\":\\\"2022-03-03T21:07:06Z\\\"},\\\"mLrhR6-WlQBMXSA8pHbVog\\\":{\\\"token\\\":\\\"$2a$10$TKpdZXLOO8RI54N/NDHSLuDfmmpmt3RzVn.4nCVekrxEkG4pP7uvu\\\",\\\"expiry\\\":1646946430,\\\"last_token\\\":\\\"$2a$10$h6h/6u8Su2HtPEAvIAPrCu3TRdIugjNG18vQCVHljmgFHsexF6DV.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:07:10Z\\\"},\\\"2bTx7k41THUB-C3zfStxwA\\\":{\\\"token\\\":\\\"$2a$10$qLQc95h77V0o7AhJ8XfX9OUMidcSBq2nVGCjaJVIIvhDVAVZzqPGC\\\",\\\"expiry\\\":1646946497,\\\"last_token\\\":\\\"$2a$10$xaMqxcngG5dcchdTEyajCOdAj9fgO15SIfok8b4OFZevp6IsGdxcy\\\",\\\"updated_at\\\":\\\"2022-03-03T21:08:16Z\\\"},\\\"1iKi_E8LHTmJWXAfx7Zx2Q\\\":{\\\"token\\\":\\\"$2a$10$8nK2OZr0rniZIqKBSVsVoeo8yDLt4Ahd9NaiTY/dC6A.4DopcSCk2\\\",\\\"expiry\\\":1646946733,\\\"last_token\\\":\\\"$2a$10$ck.OQFY1VtA5fPdhCCnpSuk0MI1zZmo1dhbGS8BLQ0xomI62kMxfq\\\",\\\"updated_at\\\":\\\"2022-03-03T21:12:13Z\\\"},\\\"eJx1186CZsRaEZNwIsxpDQ\\\":{\\\"token\\\":\\\"$2a$10$XHdCYoTwPFOxIduz68x5BuxaVZKtUcLtMTsjOXdW5m9Bc0tZYF.Zq\\\",\\\"expiry\\\":1646946816,\\\"last_token\\\":\\\"$2a$10$Dybf8HgEjtuU5AV4gsT7NOGWaTg4HfivehfJK56bGZVJaVisGYv/C\\\",\\\"updated_at\\\":\\\"2022-03-03T21:13:36Z\\\"},\\\"gVB_l2xJ8NKk-QGG1xoB4A\\\":{\\\"token\\\":\\\"$2a$10$7sitP0TV.T796SS1UOd6ruXI74CRAj/wdRnB37MdirbQYhqbBf/3a\\\",\\\"expiry\\\":1646946881,\\\"last_token\\\":\\\"$2a$10$synGKaVG7NSKKJTnN8z0yupz8KxZqj7ho.jJlouod5c3X5AXNFJZ.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:14:41Z\\\"},\\\"jgXFHnU5qLPn-VtfmAOL9g\\\":{\\\"token\\\":\\\"$2a$10$uPH1hDNA6HpUozXjzZIaDOm7hlDKpzCQ9o7X6tqwe/lTdqqWhSfp.\\\",\\\"expiry\\\":1646946940,\\\"last_token\\\":\\\"$2a$10$orS2FbZQkDvre7nWoQjEU.yfd04xO96KGVLcMhSYcm7yp4w3pUIdC\\\",\\\"updated_at\\\":\\\"2022-03-03T21:15:40Z\\\"},\\\"EZZsXgwKPGOXst_cGd8LUw\\\":{\\\"token\\\":\\\"$2a$10$P7R9yT3LD0nGLAEt1MQ2euEJ.5nJyUZhmLtn196NNgjSQDBzFXuKC\\\",\\\"expiry\\\":1646960851}}\""], ["updated_at", "2022-03-04 01:07:31.404601"], ["id", 1]]
+  [1m[35m (43.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"0jZp2M-6Thi0GEWFpGAbiQ\\\":{\\\"token\\\":\\\"$2a$10$bWemrDCO9rhjtBh/LfkIuuVXw0URO1/5.nmeUkPD7evMITLq8kgga\\\",\\\"expiry\\\":1646946355,\\\"last_token\\\":\\\"$2a$10$CV6jg1cr4ZOSFimMfKTBsO4bt90vQTm1r5MCkHfDA4Kx8z/gE.toy\\\",\\\"updated_at\\\":\\\"2022-03-03T21:05:55Z\\\"},\\\"BXkAt1Sm8SsUHF-ufCRwyQ\\\":{\\\"token\\\":\\\"$2a$10$CuSq3nPWveblJKGwXhcvkOnpqXTB1w.dff9kS2pG1yNCvOmcrCwru\\\",\\\"expiry\\\":1646946373,\\\"last_token\\\":\\\"$2a$10$sRRRPpoc0V1phat3MSEWn.b0EBJknQzJFRjfKbzm/tCxVG711gW9.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:06:13Z\\\"},\\\"kjoFzYDKPk3k0OqW8Ef8CA\\\":{\\\"token\\\":\\\"$2a$10$KJs95FoZFf04UCDUagaXPO4.XG/r.tadtJ4.R.e64tqnLHYOL8LZ6\\\",\\\"expiry\\\":1646946426,\\\"last_token\\\":\\\"$2a$10$2VB5fkphiXtjPgOhWcq5leqNLdIG07X20uAUAn4791fgD6uGtzFPu\\\",\\\"updated_at\\\":\\\"2022-03-03T21:07:06Z\\\"},\\\"mLrhR6-WlQBMXSA8pHbVog\\\":{\\\"token\\\":\\\"$2a$10$TKpdZXLOO8RI54N/NDHSLuDfmmpmt3RzVn.4nCVekrxEkG4pP7uvu\\\",\\\"expiry\\\":1646946430,\\\"last_token\\\":\\\"$2a$10$h6h/6u8Su2HtPEAvIAPrCu3TRdIugjNG18vQCVHljmgFHsexF6DV.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:07:10Z\\\"},\\\"2bTx7k41THUB-C3zfStxwA\\\":{\\\"token\\\":\\\"$2a$10$qLQc95h77V0o7AhJ8XfX9OUMidcSBq2nVGCjaJVIIvhDVAVZzqPGC\\\",\\\"expiry\\\":1646946497,\\\"last_token\\\":\\\"$2a$10$xaMqxcngG5dcchdTEyajCOdAj9fgO15SIfok8b4OFZevp6IsGdxcy\\\",\\\"updated_at\\\":\\\"2022-03-03T21:08:16Z\\\"},\\\"1iKi_E8LHTmJWXAfx7Zx2Q\\\":{\\\"token\\\":\\\"$2a$10$8nK2OZr0rniZIqKBSVsVoeo8yDLt4Ahd9NaiTY/dC6A.4DopcSCk2\\\",\\\"expiry\\\":1646946733,\\\"last_token\\\":\\\"$2a$10$ck.OQFY1VtA5fPdhCCnpSuk0MI1zZmo1dhbGS8BLQ0xomI62kMxfq\\\",\\\"updated_at\\\":\\\"2022-03-03T21:12:13Z\\\"},\\\"eJx1186CZsRaEZNwIsxpDQ\\\":{\\\"token\\\":\\\"$2a$10$XHdCYoTwPFOxIduz68x5BuxaVZKtUcLtMTsjOXdW5m9Bc0tZYF.Zq\\\",\\\"expiry\\\":1646946816,\\\"last_token\\\":\\\"$2a$10$Dybf8HgEjtuU5AV4gsT7NOGWaTg4HfivehfJK56bGZVJaVisGYv/C\\\",\\\"updated_at\\\":\\\"2022-03-03T21:13:36Z\\\"},\\\"gVB_l2xJ8NKk-QGG1xoB4A\\\":{\\\"token\\\":\\\"$2a$10$7sitP0TV.T796SS1UOd6ruXI74CRAj/wdRnB37MdirbQYhqbBf/3a\\\",\\\"expiry\\\":1646946881,\\\"last_token\\\":\\\"$2a$10$synGKaVG7NSKKJTnN8z0yupz8KxZqj7ho.jJlouod5c3X5AXNFJZ.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:14:41Z\\\"},\\\"jgXFHnU5qLPn-VtfmAOL9g\\\":{\\\"token\\\":\\\"$2a$10$uPH1hDNA6HpUozXjzZIaDOm7hlDKpzCQ9o7X6tqwe/lTdqqWhSfp.\\\",\\\"expiry\\\":1646946940,\\\"last_token\\\":\\\"$2a$10$orS2FbZQkDvre7nWoQjEU.yfd04xO96KGVLcMhSYcm7yp4w3pUIdC\\\",\\\"updated_at\\\":\\\"2022-03-03T21:15:40Z\\\"},\\\"EZZsXgwKPGOXst_cGd8LUw\\\":{\\\"token\\\":\\\"$2a$10$cKgnhTmmUDff35Cb8gj9bOikWVj1U6Gq1P3ybrJirwxa5zrisebeq\\\",\\\"expiry\\\":1646960851,\\\"last_token\\\":\\\"$2a$10$P7R9yT3LD0nGLAEt1MQ2euEJ.5nJyUZhmLtn196NNgjSQDBzFXuKC\\\",\\\"updated_at\\\":\\\"2022-03-04T01:07:31Z\\\"}}\""], ["updated_at", "2022-03-04 01:07:31.603070"], ["id", 1]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 808ms (Views: 0.5ms | ActiveRecord: 153.7ms | Allocations: 25883)
+
+
+Started POST "/auth/v1/user/sign_in" for ::1 at 2022-03-03 22:09:19 -0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"test@test.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "test@test.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"BXkAt1Sm8SsUHF-ufCRwyQ\\\":{\\\"token\\\":\\\"$2a$10$CuSq3nPWveblJKGwXhcvkOnpqXTB1w.dff9kS2pG1yNCvOmcrCwru\\\",\\\"expiry\\\":1646946373,\\\"last_token\\\":\\\"$2a$10$sRRRPpoc0V1phat3MSEWn.b0EBJknQzJFRjfKbzm/tCxVG711gW9.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:06:13Z\\\"},\\\"kjoFzYDKPk3k0OqW8Ef8CA\\\":{\\\"token\\\":\\\"$2a$10$KJs95FoZFf04UCDUagaXPO4.XG/r.tadtJ4.R.e64tqnLHYOL8LZ6\\\",\\\"expiry\\\":1646946426,\\\"last_token\\\":\\\"$2a$10$2VB5fkphiXtjPgOhWcq5leqNLdIG07X20uAUAn4791fgD6uGtzFPu\\\",\\\"updated_at\\\":\\\"2022-03-03T21:07:06Z\\\"},\\\"mLrhR6-WlQBMXSA8pHbVog\\\":{\\\"token\\\":\\\"$2a$10$TKpdZXLOO8RI54N/NDHSLuDfmmpmt3RzVn.4nCVekrxEkG4pP7uvu\\\",\\\"expiry\\\":1646946430,\\\"last_token\\\":\\\"$2a$10$h6h/6u8Su2HtPEAvIAPrCu3TRdIugjNG18vQCVHljmgFHsexF6DV.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:07:10Z\\\"},\\\"2bTx7k41THUB-C3zfStxwA\\\":{\\\"token\\\":\\\"$2a$10$qLQc95h77V0o7AhJ8XfX9OUMidcSBq2nVGCjaJVIIvhDVAVZzqPGC\\\",\\\"expiry\\\":1646946497,\\\"last_token\\\":\\\"$2a$10$xaMqxcngG5dcchdTEyajCOdAj9fgO15SIfok8b4OFZevp6IsGdxcy\\\",\\\"updated_at\\\":\\\"2022-03-03T21:08:16Z\\\"},\\\"1iKi_E8LHTmJWXAfx7Zx2Q\\\":{\\\"token\\\":\\\"$2a$10$8nK2OZr0rniZIqKBSVsVoeo8yDLt4Ahd9NaiTY/dC6A.4DopcSCk2\\\",\\\"expiry\\\":1646946733,\\\"last_token\\\":\\\"$2a$10$ck.OQFY1VtA5fPdhCCnpSuk0MI1zZmo1dhbGS8BLQ0xomI62kMxfq\\\",\\\"updated_at\\\":\\\"2022-03-03T21:12:13Z\\\"},\\\"eJx1186CZsRaEZNwIsxpDQ\\\":{\\\"token\\\":\\\"$2a$10$XHdCYoTwPFOxIduz68x5BuxaVZKtUcLtMTsjOXdW5m9Bc0tZYF.Zq\\\",\\\"expiry\\\":1646946816,\\\"last_token\\\":\\\"$2a$10$Dybf8HgEjtuU5AV4gsT7NOGWaTg4HfivehfJK56bGZVJaVisGYv/C\\\",\\\"updated_at\\\":\\\"2022-03-03T21:13:36Z\\\"},\\\"gVB_l2xJ8NKk-QGG1xoB4A\\\":{\\\"token\\\":\\\"$2a$10$7sitP0TV.T796SS1UOd6ruXI74CRAj/wdRnB37MdirbQYhqbBf/3a\\\",\\\"expiry\\\":1646946881,\\\"last_token\\\":\\\"$2a$10$synGKaVG7NSKKJTnN8z0yupz8KxZqj7ho.jJlouod5c3X5AXNFJZ.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:14:41Z\\\"},\\\"jgXFHnU5qLPn-VtfmAOL9g\\\":{\\\"token\\\":\\\"$2a$10$uPH1hDNA6HpUozXjzZIaDOm7hlDKpzCQ9o7X6tqwe/lTdqqWhSfp.\\\",\\\"expiry\\\":1646946940,\\\"last_token\\\":\\\"$2a$10$orS2FbZQkDvre7nWoQjEU.yfd04xO96KGVLcMhSYcm7yp4w3pUIdC\\\",\\\"updated_at\\\":\\\"2022-03-03T21:15:40Z\\\"},\\\"EZZsXgwKPGOXst_cGd8LUw\\\":{\\\"token\\\":\\\"$2a$10$cKgnhTmmUDff35Cb8gj9bOikWVj1U6Gq1P3ybrJirwxa5zrisebeq\\\",\\\"expiry\\\":1646960851,\\\"last_token\\\":\\\"$2a$10$P7R9yT3LD0nGLAEt1MQ2euEJ.5nJyUZhmLtn196NNgjSQDBzFXuKC\\\",\\\"updated_at\\\":\\\"2022-03-04T01:07:31Z\\\"},\\\"ebi4Sh8hjXUu0JmKhoJL9Q\\\":{\\\"token\\\":\\\"$2a$10$8clX9ah7i5MXIxMxAZA6dOq68DhwYU4omeX9UUQz8YYrbPqyzuFt6\\\",\\\"expiry\\\":1646960959}}\""], ["updated_at", "2022-03-04 01:09:19.729559"], ["id", 1]]
+  [1m[35m (10.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"BXkAt1Sm8SsUHF-ufCRwyQ\\\":{\\\"token\\\":\\\"$2a$10$CuSq3nPWveblJKGwXhcvkOnpqXTB1w.dff9kS2pG1yNCvOmcrCwru\\\",\\\"expiry\\\":1646946373,\\\"last_token\\\":\\\"$2a$10$sRRRPpoc0V1phat3MSEWn.b0EBJknQzJFRjfKbzm/tCxVG711gW9.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:06:13Z\\\"},\\\"kjoFzYDKPk3k0OqW8Ef8CA\\\":{\\\"token\\\":\\\"$2a$10$KJs95FoZFf04UCDUagaXPO4.XG/r.tadtJ4.R.e64tqnLHYOL8LZ6\\\",\\\"expiry\\\":1646946426,\\\"last_token\\\":\\\"$2a$10$2VB5fkphiXtjPgOhWcq5leqNLdIG07X20uAUAn4791fgD6uGtzFPu\\\",\\\"updated_at\\\":\\\"2022-03-03T21:07:06Z\\\"},\\\"mLrhR6-WlQBMXSA8pHbVog\\\":{\\\"token\\\":\\\"$2a$10$TKpdZXLOO8RI54N/NDHSLuDfmmpmt3RzVn.4nCVekrxEkG4pP7uvu\\\",\\\"expiry\\\":1646946430,\\\"last_token\\\":\\\"$2a$10$h6h/6u8Su2HtPEAvIAPrCu3TRdIugjNG18vQCVHljmgFHsexF6DV.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:07:10Z\\\"},\\\"2bTx7k41THUB-C3zfStxwA\\\":{\\\"token\\\":\\\"$2a$10$qLQc95h77V0o7AhJ8XfX9OUMidcSBq2nVGCjaJVIIvhDVAVZzqPGC\\\",\\\"expiry\\\":1646946497,\\\"last_token\\\":\\\"$2a$10$xaMqxcngG5dcchdTEyajCOdAj9fgO15SIfok8b4OFZevp6IsGdxcy\\\",\\\"updated_at\\\":\\\"2022-03-03T21:08:16Z\\\"},\\\"1iKi_E8LHTmJWXAfx7Zx2Q\\\":{\\\"token\\\":\\\"$2a$10$8nK2OZr0rniZIqKBSVsVoeo8yDLt4Ahd9NaiTY/dC6A.4DopcSCk2\\\",\\\"expiry\\\":1646946733,\\\"last_token\\\":\\\"$2a$10$ck.OQFY1VtA5fPdhCCnpSuk0MI1zZmo1dhbGS8BLQ0xomI62kMxfq\\\",\\\"updated_at\\\":\\\"2022-03-03T21:12:13Z\\\"},\\\"eJx1186CZsRaEZNwIsxpDQ\\\":{\\\"token\\\":\\\"$2a$10$XHdCYoTwPFOxIduz68x5BuxaVZKtUcLtMTsjOXdW5m9Bc0tZYF.Zq\\\",\\\"expiry\\\":1646946816,\\\"last_token\\\":\\\"$2a$10$Dybf8HgEjtuU5AV4gsT7NOGWaTg4HfivehfJK56bGZVJaVisGYv/C\\\",\\\"updated_at\\\":\\\"2022-03-03T21:13:36Z\\\"},\\\"gVB_l2xJ8NKk-QGG1xoB4A\\\":{\\\"token\\\":\\\"$2a$10$7sitP0TV.T796SS1UOd6ruXI74CRAj/wdRnB37MdirbQYhqbBf/3a\\\",\\\"expiry\\\":1646946881,\\\"last_token\\\":\\\"$2a$10$synGKaVG7NSKKJTnN8z0yupz8KxZqj7ho.jJlouod5c3X5AXNFJZ.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:14:41Z\\\"},\\\"jgXFHnU5qLPn-VtfmAOL9g\\\":{\\\"token\\\":\\\"$2a$10$uPH1hDNA6HpUozXjzZIaDOm7hlDKpzCQ9o7X6tqwe/lTdqqWhSfp.\\\",\\\"expiry\\\":1646946940,\\\"last_token\\\":\\\"$2a$10$orS2FbZQkDvre7nWoQjEU.yfd04xO96KGVLcMhSYcm7yp4w3pUIdC\\\",\\\"updated_at\\\":\\\"2022-03-03T21:15:40Z\\\"},\\\"EZZsXgwKPGOXst_cGd8LUw\\\":{\\\"token\\\":\\\"$2a$10$cKgnhTmmUDff35Cb8gj9bOikWVj1U6Gq1P3ybrJirwxa5zrisebeq\\\",\\\"expiry\\\":1646960851,\\\"last_token\\\":\\\"$2a$10$P7R9yT3LD0nGLAEt1MQ2euEJ.5nJyUZhmLtn196NNgjSQDBzFXuKC\\\",\\\"updated_at\\\":\\\"2022-03-04T01:07:31Z\\\"},\\\"ebi4Sh8hjXUu0JmKhoJL9Q\\\":{\\\"token\\\":\\\"$2a$10$glsovHfWZEtredcaJm0JXO2AEFISEpBdzfOu9lShXJqOkXEC/vI6C\\\",\\\"expiry\\\":1646960959,\\\"last_token\\\":\\\"$2a$10$8clX9ah7i5MXIxMxAZA6dOq68DhwYU4omeX9UUQz8YYrbPqyzuFt6\\\",\\\"updated_at\\\":\\\"2022-03-04T01:09:19Z\\\"}}\""], ["updated_at", "2022-03-04 01:09:19.850098"], ["id", 1]]
+  [1m[35m (13.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 643ms (Views: 0.3ms | ActiveRecord: 36.7ms | Allocations: 26136)
+
+
+Started POST "/auth/v1/user" for ::1 at 2022-03-03 22:09:23 -0300
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"name"=>"Test User 1", "email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"Test User 1", "email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :registration[0m
+[31mUnpermitted parameter: :registration[0m
+[31mUnpermitted parameter: :registration[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (49.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."provider" = $2 LIMIT $3[0m  [["email", "test@test.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 527ms (Views: 0.4ms | ActiveRecord: 75.8ms | Allocations: 12035)
+
+
+Started POST "/auth/v1/user/password" for ::1 at 2022-03-03 22:11:17 -0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeviseTokenAuth::PasswordsController#create as */*
+  Parameters: {"email"=>"test@test.com", "redirect_url"=>"localhost:3001/change_it", "password"=>{"email"=>"test@test.com", "redirect_url"=>"localhost:3001/change_it"}}
+[31mUnpermitted parameters: :redirect_url, :password[0m
+[31mUnpermitted parameters: :redirect_url, :password[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["uid", "test@test.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."reset_password_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["reset_password_token", "b3ab7e96f0a59d9c970916ee76280cce970394d287acc8e2cb2422e1ce44ce60"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "b3ab7e96f0a59d9c970916ee76280cce970394d287acc8e2cb2422e1ce44ce60"], ["reset_password_sent_at", "2022-03-04 01:11:17.838827"], ["updated_at", "2022-03-04 01:11:17.840119"], ["id", 1]]
+  [1m[35m (13.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (Duration: 13.5ms | Allocations: 381)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 103.7ms
+Delivered mail 6221673626e1a_20b33048964d1@silvio-Inspiron-N4050.mail (290.9ms)
+Date: Thu, 03 Mar 2022 22:11:18 -0300
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: test@test.com
+Message-ID: <6221673626e1a_20b33048964d1@silvio-Inspiron-N4050.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+email: test@test.com
+provider: email
+redirect-url: localhost:3001/change_it
+client-config: default
+
+<p>Hello test@test.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="localhost:3001/change_it?reset_password_token=3n8KQ_XYhz4DJ9hznJj8">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Completed 200 OK in 837ms (Views: 0.5ms | ActiveRecord: 24.7ms | Allocations: 39770)
+
+
+Started PATCH "/auth/v1/user/password" for ::1 at 2022-03-03 22:14:25 -0300
+Processing by DeviseTokenAuth::PasswordsController#update as */*
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 205)
+
+
+Started POST "/auth/v1/user/password" for ::1 at 2022-03-03 22:15:26 -0300
+Processing by DeviseTokenAuth::PasswordsController#create as */*
+  Parameters: {"email"=>"test@test.com", "redirect_url"=>"localhost:3001/change_it", "password"=>{"email"=>"test@test.com", "redirect_url"=>"localhost:3001/change_it"}}
+[31mUnpermitted parameters: :redirect_url, :password[0m
+[31mUnpermitted parameters: :redirect_url, :password[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["uid", "test@test.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."reset_password_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["reset_password_token", "4fb45adc00920d85243a9696777ad8d2669f9ee1c8a2f681d031bb88d046e421"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["reset_password_token", "4fb45adc00920d85243a9696777ad8d2669f9ee1c8a2f681d031bb88d046e421"], ["reset_password_sent_at", "2022-03-04 01:15:26.287488"], ["updated_at", "2022-03-04 01:15:26.288792"], ["id", 1]]
+  [1m[35m (20.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (Duration: 0.3ms | Allocations: 47)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 3.0ms
+Delivered mail 6221682e4f410_20b35370965ca@silvio-Inspiron-N4050.mail (17.1ms)
+Date: Thu, 03 Mar 2022 22:15:26 -0300
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: test@test.com
+Message-ID: <6221682e4f410_20b35370965ca@silvio-Inspiron-N4050.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+email: test@test.com
+provider: email
+redirect-url: localhost:3001/change_it
+client-config: default
+
+<p>Hello test@test.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="localhost:3001/change_it?reset_password_token=tce3nuPUMqFrQVm94MGF">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Completed 200 OK in 65ms (Views: 0.3ms | ActiveRecord: 23.4ms | Allocations: 10060)
+
+
+Started PATCH "/auth/v1/user/password" for ::1 at 2022-03-03 22:18:30 -0300
+Processing by DeviseTokenAuth::PasswordsController#update as */*
+  Parameters: {"reset_password_token"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+[31mUnpermitted parameters: :password, :password_confirmation[0m
+[31mUnpermitted parameters: :password, :password_confirmation[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."reset_password_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["reset_password_token", "4fb45adc00920d85243a9696777ad8d2669f9ee1c8a2f681d031bb88d046e421"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :reset_password_token[0m
+[31mUnpermitted parameter: :reset_password_token[0m
+[31mUnpermitted parameter: :reset_password_token[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "encrypted_password" = $2, "reset_password_token" = $3, "reset_password_sent_at" = $4, "updated_at" = $5 WHERE "users"."id" = $6[0m  [["tokens", "\"{\\\"kjoFzYDKPk3k0OqW8Ef8CA\\\":{\\\"token\\\":\\\"$2a$10$KJs95FoZFf04UCDUagaXPO4.XG/r.tadtJ4.R.e64tqnLHYOL8LZ6\\\",\\\"expiry\\\":1646946426,\\\"last_token\\\":\\\"$2a$10$2VB5fkphiXtjPgOhWcq5leqNLdIG07X20uAUAn4791fgD6uGtzFPu\\\",\\\"updated_at\\\":\\\"2022-03-03T21:07:06Z\\\"},\\\"mLrhR6-WlQBMXSA8pHbVog\\\":{\\\"token\\\":\\\"$2a$10$TKpdZXLOO8RI54N/NDHSLuDfmmpmt3RzVn.4nCVekrxEkG4pP7uvu\\\",\\\"expiry\\\":1646946430,\\\"last_token\\\":\\\"$2a$10$h6h/6u8Su2HtPEAvIAPrCu3TRdIugjNG18vQCVHljmgFHsexF6DV.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:07:10Z\\\"},\\\"2bTx7k41THUB-C3zfStxwA\\\":{\\\"token\\\":\\\"$2a$10$qLQc95h77V0o7AhJ8XfX9OUMidcSBq2nVGCjaJVIIvhDVAVZzqPGC\\\",\\\"expiry\\\":1646946497,\\\"last_token\\\":\\\"$2a$10$xaMqxcngG5dcchdTEyajCOdAj9fgO15SIfok8b4OFZevp6IsGdxcy\\\",\\\"updated_at\\\":\\\"2022-03-03T21:08:16Z\\\"},\\\"1iKi_E8LHTmJWXAfx7Zx2Q\\\":{\\\"token\\\":\\\"$2a$10$8nK2OZr0rniZIqKBSVsVoeo8yDLt4Ahd9NaiTY/dC6A.4DopcSCk2\\\",\\\"expiry\\\":1646946733,\\\"last_token\\\":\\\"$2a$10$ck.OQFY1VtA5fPdhCCnpSuk0MI1zZmo1dhbGS8BLQ0xomI62kMxfq\\\",\\\"updated_at\\\":\\\"2022-03-03T21:12:13Z\\\"},\\\"eJx1186CZsRaEZNwIsxpDQ\\\":{\\\"token\\\":\\\"$2a$10$XHdCYoTwPFOxIduz68x5BuxaVZKtUcLtMTsjOXdW5m9Bc0tZYF.Zq\\\",\\\"expiry\\\":1646946816,\\\"last_token\\\":\\\"$2a$10$Dybf8HgEjtuU5AV4gsT7NOGWaTg4HfivehfJK56bGZVJaVisGYv/C\\\",\\\"updated_at\\\":\\\"2022-03-03T21:13:36Z\\\"},\\\"gVB_l2xJ8NKk-QGG1xoB4A\\\":{\\\"token\\\":\\\"$2a$10$7sitP0TV.T796SS1UOd6ruXI74CRAj/wdRnB37MdirbQYhqbBf/3a\\\",\\\"expiry\\\":1646946881,\\\"last_token\\\":\\\"$2a$10$synGKaVG7NSKKJTnN8z0yupz8KxZqj7ho.jJlouod5c3X5AXNFJZ.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:14:41Z\\\"},\\\"jgXFHnU5qLPn-VtfmAOL9g\\\":{\\\"token\\\":\\\"$2a$10$uPH1hDNA6HpUozXjzZIaDOm7hlDKpzCQ9o7X6tqwe/lTdqqWhSfp.\\\",\\\"expiry\\\":1646946940,\\\"last_token\\\":\\\"$2a$10$orS2FbZQkDvre7nWoQjEU.yfd04xO96KGVLcMhSYcm7yp4w3pUIdC\\\",\\\"updated_at\\\":\\\"2022-03-03T21:15:40Z\\\"},\\\"EZZsXgwKPGOXst_cGd8LUw\\\":{\\\"token\\\":\\\"$2a$10$cKgnhTmmUDff35Cb8gj9bOikWVj1U6Gq1P3ybrJirwxa5zrisebeq\\\",\\\"expiry\\\":1646960851,\\\"last_token\\\":\\\"$2a$10$P7R9yT3LD0nGLAEt1MQ2euEJ.5nJyUZhmLtn196NNgjSQDBzFXuKC\\\",\\\"updated_at\\\":\\\"2022-03-04T01:07:31Z\\\"},\\\"ebi4Sh8hjXUu0JmKhoJL9Q\\\":{\\\"token\\\":\\\"$2a$10$glsovHfWZEtredcaJm0JXO2AEFISEpBdzfOu9lShXJqOkXEC/vI6C\\\",\\\"expiry\\\":1646960959,\\\"last_token\\\":\\\"$2a$10$8clX9ah7i5MXIxMxAZA6dOq68DhwYU4omeX9UUQz8YYrbPqyzuFt6\\\",\\\"updated_at\\\":\\\"2022-03-04T01:09:19Z\\\"},\\\"7y1TZ8LTxV6S_n1K5tx9qw\\\":{\\\"token\\\":\\\"$2a$10$7zlT.NDUs4H/vlDmZvqeZOi5ffE7rKodeFHNyeXyeVgEA4H8RHt92\\\",\\\"expiry\\\":1646961510}}\""], ["encrypted_password", "$2a$12$ZWkn7RAL.MdiHMegRV3Z/.q/Xuk4huL1MmFYFqAsq39u7AxnbNMFy"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["updated_at", "2022-03-04 01:18:31.341909"], ["id", 1]]
+  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"kjoFzYDKPk3k0OqW8Ef8CA\\\":{\\\"token\\\":\\\"$2a$10$KJs95FoZFf04UCDUagaXPO4.XG/r.tadtJ4.R.e64tqnLHYOL8LZ6\\\",\\\"expiry\\\":1646946426,\\\"last_token\\\":\\\"$2a$10$2VB5fkphiXtjPgOhWcq5leqNLdIG07X20uAUAn4791fgD6uGtzFPu\\\",\\\"updated_at\\\":\\\"2022-03-03T21:07:06Z\\\"},\\\"mLrhR6-WlQBMXSA8pHbVog\\\":{\\\"token\\\":\\\"$2a$10$TKpdZXLOO8RI54N/NDHSLuDfmmpmt3RzVn.4nCVekrxEkG4pP7uvu\\\",\\\"expiry\\\":1646946430,\\\"last_token\\\":\\\"$2a$10$h6h/6u8Su2HtPEAvIAPrCu3TRdIugjNG18vQCVHljmgFHsexF6DV.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:07:10Z\\\"},\\\"2bTx7k41THUB-C3zfStxwA\\\":{\\\"token\\\":\\\"$2a$10$qLQc95h77V0o7AhJ8XfX9OUMidcSBq2nVGCjaJVIIvhDVAVZzqPGC\\\",\\\"expiry\\\":1646946497,\\\"last_token\\\":\\\"$2a$10$xaMqxcngG5dcchdTEyajCOdAj9fgO15SIfok8b4OFZevp6IsGdxcy\\\",\\\"updated_at\\\":\\\"2022-03-03T21:08:16Z\\\"},\\\"1iKi_E8LHTmJWXAfx7Zx2Q\\\":{\\\"token\\\":\\\"$2a$10$8nK2OZr0rniZIqKBSVsVoeo8yDLt4Ahd9NaiTY/dC6A.4DopcSCk2\\\",\\\"expiry\\\":1646946733,\\\"last_token\\\":\\\"$2a$10$ck.OQFY1VtA5fPdhCCnpSuk0MI1zZmo1dhbGS8BLQ0xomI62kMxfq\\\",\\\"updated_at\\\":\\\"2022-03-03T21:12:13Z\\\"},\\\"eJx1186CZsRaEZNwIsxpDQ\\\":{\\\"token\\\":\\\"$2a$10$XHdCYoTwPFOxIduz68x5BuxaVZKtUcLtMTsjOXdW5m9Bc0tZYF.Zq\\\",\\\"expiry\\\":1646946816,\\\"last_token\\\":\\\"$2a$10$Dybf8HgEjtuU5AV4gsT7NOGWaTg4HfivehfJK56bGZVJaVisGYv/C\\\",\\\"updated_at\\\":\\\"2022-03-03T21:13:36Z\\\"},\\\"gVB_l2xJ8NKk-QGG1xoB4A\\\":{\\\"token\\\":\\\"$2a$10$7sitP0TV.T796SS1UOd6ruXI74CRAj/wdRnB37MdirbQYhqbBf/3a\\\",\\\"expiry\\\":1646946881,\\\"last_token\\\":\\\"$2a$10$synGKaVG7NSKKJTnN8z0yupz8KxZqj7ho.jJlouod5c3X5AXNFJZ.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:14:41Z\\\"},\\\"jgXFHnU5qLPn-VtfmAOL9g\\\":{\\\"token\\\":\\\"$2a$10$uPH1hDNA6HpUozXjzZIaDOm7hlDKpzCQ9o7X6tqwe/lTdqqWhSfp.\\\",\\\"expiry\\\":1646946940,\\\"last_token\\\":\\\"$2a$10$orS2FbZQkDvre7nWoQjEU.yfd04xO96KGVLcMhSYcm7yp4w3pUIdC\\\",\\\"updated_at\\\":\\\"2022-03-03T21:15:40Z\\\"},\\\"EZZsXgwKPGOXst_cGd8LUw\\\":{\\\"token\\\":\\\"$2a$10$cKgnhTmmUDff35Cb8gj9bOikWVj1U6Gq1P3ybrJirwxa5zrisebeq\\\",\\\"expiry\\\":1646960851,\\\"last_token\\\":\\\"$2a$10$P7R9yT3LD0nGLAEt1MQ2euEJ.5nJyUZhmLtn196NNgjSQDBzFXuKC\\\",\\\"updated_at\\\":\\\"2022-03-04T01:07:31Z\\\"},\\\"ebi4Sh8hjXUu0JmKhoJL9Q\\\":{\\\"token\\\":\\\"$2a$10$glsovHfWZEtredcaJm0JXO2AEFISEpBdzfOu9lShXJqOkXEC/vI6C\\\",\\\"expiry\\\":1646960959,\\\"last_token\\\":\\\"$2a$10$8clX9ah7i5MXIxMxAZA6dOq68DhwYU4omeX9UUQz8YYrbPqyzuFt6\\\",\\\"updated_at\\\":\\\"2022-03-04T01:09:19Z\\\"},\\\"7y1TZ8LTxV6S_n1K5tx9qw\\\":{\\\"token\\\":\\\"$2a$10$9Q4ODxhAn.gyaz4Y2BpH5eFm07I9sO1gHw3U/m4dJyFTgrMup/bfW\\\",\\\"expiry\\\":1646961511,\\\"last_token\\\":\\\"$2a$10$7zlT.NDUs4H/vlDmZvqeZOi5ffE7rKodeFHNyeXyeVgEA4H8RHt92\\\",\\\"updated_at\\\":\\\"2022-03-04T01:18:31Z\\\"}}\""], ["updated_at", "2022-03-04 01:18:31.482541"], ["id", 1]]
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 629ms (Views: 0.7ms | ActiveRecord: 26.7ms | Allocations: 17061)
+
+
+Started POST "/auth/v1/user/sign_in" for ::1 at 2022-03-03 22:19:02 -0300
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"test@test.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "test@test.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+Completed 401 Unauthorized in 361ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 1907)
+
+
+Started POST "/auth/v1/user/sign_in" for ::1 at 2022-03-03 22:19:15 -0300
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"test@test.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "test@test.com"], ["provider", "email"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :session[0m
+[31mUnpermitted parameter: :session[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"mLrhR6-WlQBMXSA8pHbVog\\\":{\\\"token\\\":\\\"$2a$10$TKpdZXLOO8RI54N/NDHSLuDfmmpmt3RzVn.4nCVekrxEkG4pP7uvu\\\",\\\"expiry\\\":1646946430,\\\"last_token\\\":\\\"$2a$10$h6h/6u8Su2HtPEAvIAPrCu3TRdIugjNG18vQCVHljmgFHsexF6DV.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:07:10Z\\\"},\\\"2bTx7k41THUB-C3zfStxwA\\\":{\\\"token\\\":\\\"$2a$10$qLQc95h77V0o7AhJ8XfX9OUMidcSBq2nVGCjaJVIIvhDVAVZzqPGC\\\",\\\"expiry\\\":1646946497,\\\"last_token\\\":\\\"$2a$10$xaMqxcngG5dcchdTEyajCOdAj9fgO15SIfok8b4OFZevp6IsGdxcy\\\",\\\"updated_at\\\":\\\"2022-03-03T21:08:16Z\\\"},\\\"1iKi_E8LHTmJWXAfx7Zx2Q\\\":{\\\"token\\\":\\\"$2a$10$8nK2OZr0rniZIqKBSVsVoeo8yDLt4Ahd9NaiTY/dC6A.4DopcSCk2\\\",\\\"expiry\\\":1646946733,\\\"last_token\\\":\\\"$2a$10$ck.OQFY1VtA5fPdhCCnpSuk0MI1zZmo1dhbGS8BLQ0xomI62kMxfq\\\",\\\"updated_at\\\":\\\"2022-03-03T21:12:13Z\\\"},\\\"eJx1186CZsRaEZNwIsxpDQ\\\":{\\\"token\\\":\\\"$2a$10$XHdCYoTwPFOxIduz68x5BuxaVZKtUcLtMTsjOXdW5m9Bc0tZYF.Zq\\\",\\\"expiry\\\":1646946816,\\\"last_token\\\":\\\"$2a$10$Dybf8HgEjtuU5AV4gsT7NOGWaTg4HfivehfJK56bGZVJaVisGYv/C\\\",\\\"updated_at\\\":\\\"2022-03-03T21:13:36Z\\\"},\\\"gVB_l2xJ8NKk-QGG1xoB4A\\\":{\\\"token\\\":\\\"$2a$10$7sitP0TV.T796SS1UOd6ruXI74CRAj/wdRnB37MdirbQYhqbBf/3a\\\",\\\"expiry\\\":1646946881,\\\"last_token\\\":\\\"$2a$10$synGKaVG7NSKKJTnN8z0yupz8KxZqj7ho.jJlouod5c3X5AXNFJZ.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:14:41Z\\\"},\\\"jgXFHnU5qLPn-VtfmAOL9g\\\":{\\\"token\\\":\\\"$2a$10$uPH1hDNA6HpUozXjzZIaDOm7hlDKpzCQ9o7X6tqwe/lTdqqWhSfp.\\\",\\\"expiry\\\":1646946940,\\\"last_token\\\":\\\"$2a$10$orS2FbZQkDvre7nWoQjEU.yfd04xO96KGVLcMhSYcm7yp4w3pUIdC\\\",\\\"updated_at\\\":\\\"2022-03-03T21:15:40Z\\\"},\\\"EZZsXgwKPGOXst_cGd8LUw\\\":{\\\"token\\\":\\\"$2a$10$cKgnhTmmUDff35Cb8gj9bOikWVj1U6Gq1P3ybrJirwxa5zrisebeq\\\",\\\"expiry\\\":1646960851,\\\"last_token\\\":\\\"$2a$10$P7R9yT3LD0nGLAEt1MQ2euEJ.5nJyUZhmLtn196NNgjSQDBzFXuKC\\\",\\\"updated_at\\\":\\\"2022-03-04T01:07:31Z\\\"},\\\"ebi4Sh8hjXUu0JmKhoJL9Q\\\":{\\\"token\\\":\\\"$2a$10$glsovHfWZEtredcaJm0JXO2AEFISEpBdzfOu9lShXJqOkXEC/vI6C\\\",\\\"expiry\\\":1646960959,\\\"last_token\\\":\\\"$2a$10$8clX9ah7i5MXIxMxAZA6dOq68DhwYU4omeX9UUQz8YYrbPqyzuFt6\\\",\\\"updated_at\\\":\\\"2022-03-04T01:09:19Z\\\"},\\\"7y1TZ8LTxV6S_n1K5tx9qw\\\":{\\\"token\\\":\\\"$2a$10$9Q4ODxhAn.gyaz4Y2BpH5eFm07I9sO1gHw3U/m4dJyFTgrMup/bfW\\\",\\\"expiry\\\":1646961511,\\\"last_token\\\":\\\"$2a$10$7zlT.NDUs4H/vlDmZvqeZOi5ffE7rKodeFHNyeXyeVgEA4H8RHt92\\\",\\\"updated_at\\\":\\\"2022-03-04T01:18:31Z\\\"},\\\"VNDr8rfjE_msFm5Ex4gvYQ\\\":{\\\"token\\\":\\\"$2a$10$2Z0/nQPmtmfcEzLbjkpNGOS/3S6t5nJrC2bv8pAB6XOT9djKiV7xq\\\",\\\"expiry\\\":1646961555}}\""], ["updated_at", "2022-03-04 01:19:15.962632"], ["id", 1]]
+  [1m[35m (17.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[37mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2 FOR UPDATE[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"mLrhR6-WlQBMXSA8pHbVog\\\":{\\\"token\\\":\\\"$2a$10$TKpdZXLOO8RI54N/NDHSLuDfmmpmt3RzVn.4nCVekrxEkG4pP7uvu\\\",\\\"expiry\\\":1646946430,\\\"last_token\\\":\\\"$2a$10$h6h/6u8Su2HtPEAvIAPrCu3TRdIugjNG18vQCVHljmgFHsexF6DV.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:07:10Z\\\"},\\\"2bTx7k41THUB-C3zfStxwA\\\":{\\\"token\\\":\\\"$2a$10$qLQc95h77V0o7AhJ8XfX9OUMidcSBq2nVGCjaJVIIvhDVAVZzqPGC\\\",\\\"expiry\\\":1646946497,\\\"last_token\\\":\\\"$2a$10$xaMqxcngG5dcchdTEyajCOdAj9fgO15SIfok8b4OFZevp6IsGdxcy\\\",\\\"updated_at\\\":\\\"2022-03-03T21:08:16Z\\\"},\\\"1iKi_E8LHTmJWXAfx7Zx2Q\\\":{\\\"token\\\":\\\"$2a$10$8nK2OZr0rniZIqKBSVsVoeo8yDLt4Ahd9NaiTY/dC6A.4DopcSCk2\\\",\\\"expiry\\\":1646946733,\\\"last_token\\\":\\\"$2a$10$ck.OQFY1VtA5fPdhCCnpSuk0MI1zZmo1dhbGS8BLQ0xomI62kMxfq\\\",\\\"updated_at\\\":\\\"2022-03-03T21:12:13Z\\\"},\\\"eJx1186CZsRaEZNwIsxpDQ\\\":{\\\"token\\\":\\\"$2a$10$XHdCYoTwPFOxIduz68x5BuxaVZKtUcLtMTsjOXdW5m9Bc0tZYF.Zq\\\",\\\"expiry\\\":1646946816,\\\"last_token\\\":\\\"$2a$10$Dybf8HgEjtuU5AV4gsT7NOGWaTg4HfivehfJK56bGZVJaVisGYv/C\\\",\\\"updated_at\\\":\\\"2022-03-03T21:13:36Z\\\"},\\\"gVB_l2xJ8NKk-QGG1xoB4A\\\":{\\\"token\\\":\\\"$2a$10$7sitP0TV.T796SS1UOd6ruXI74CRAj/wdRnB37MdirbQYhqbBf/3a\\\",\\\"expiry\\\":1646946881,\\\"last_token\\\":\\\"$2a$10$synGKaVG7NSKKJTnN8z0yupz8KxZqj7ho.jJlouod5c3X5AXNFJZ.\\\",\\\"updated_at\\\":\\\"2022-03-03T21:14:41Z\\\"},\\\"jgXFHnU5qLPn-VtfmAOL9g\\\":{\\\"token\\\":\\\"$2a$10$uPH1hDNA6HpUozXjzZIaDOm7hlDKpzCQ9o7X6tqwe/lTdqqWhSfp.\\\",\\\"expiry\\\":1646946940,\\\"last_token\\\":\\\"$2a$10$orS2FbZQkDvre7nWoQjEU.yfd04xO96KGVLcMhSYcm7yp4w3pUIdC\\\",\\\"updated_at\\\":\\\"2022-03-03T21:15:40Z\\\"},\\\"EZZsXgwKPGOXst_cGd8LUw\\\":{\\\"token\\\":\\\"$2a$10$cKgnhTmmUDff35Cb8gj9bOikWVj1U6Gq1P3ybrJirwxa5zrisebeq\\\",\\\"expiry\\\":1646960851,\\\"last_token\\\":\\\"$2a$10$P7R9yT3LD0nGLAEt1MQ2euEJ.5nJyUZhmLtn196NNgjSQDBzFXuKC\\\",\\\"updated_at\\\":\\\"2022-03-04T01:07:31Z\\\"},\\\"ebi4Sh8hjXUu0JmKhoJL9Q\\\":{\\\"token\\\":\\\"$2a$10$glsovHfWZEtredcaJm0JXO2AEFISEpBdzfOu9lShXJqOkXEC/vI6C\\\",\\\"expiry\\\":1646960959,\\\"last_token\\\":\\\"$2a$10$8clX9ah7i5MXIxMxAZA6dOq68DhwYU4omeX9UUQz8YYrbPqyzuFt6\\\",\\\"updated_at\\\":\\\"2022-03-04T01:09:19Z\\\"},\\\"7y1TZ8LTxV6S_n1K5tx9qw\\\":{\\\"token\\\":\\\"$2a$10$9Q4ODxhAn.gyaz4Y2BpH5eFm07I9sO1gHw3U/m4dJyFTgrMup/bfW\\\",\\\"expiry\\\":1646961511,\\\"last_token\\\":\\\"$2a$10$7zlT.NDUs4H/vlDmZvqeZOi5ffE7rKodeFHNyeXyeVgEA4H8RHt92\\\",\\\"updated_at\\\":\\\"2022-03-04T01:18:31Z\\\"},\\\"VNDr8rfjE_msFm5Ex4gvYQ\\\":{\\\"token\\\":\\\"$2a$10$HqmaTx/eaHU40HqGPTXOEu3y3J3IK.yPvisdMWuUFIRI0Hr7YovHy\\\",\\\"expiry\\\":1646961556,\\\"last_token\\\":\\\"$2a$10$2Z0/nQPmtmfcEzLbjkpNGOS/3S6t5nJrC2bv8pAB6XOT9djKiV7xq\\\",\\\"updated_at\\\":\\\"2022-03-04T01:19:16Z\\\"}}\""], ["updated_at", "2022-03-04 01:19:16.091846"], ["id", 1]]
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 578ms (Views: 0.4ms | ActiveRecord: 35.9ms | Allocations: 14245)
+
+
+Started PATCH "/auth/v1/user/password" for ::1 at 2022-03-03 22:19:39 -0300
+Processing by DeviseTokenAuth::PasswordsController#update as */*
+  Parameters: {"reset_password_token"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+[31mUnpermitted parameters: :password, :password_confirmation[0m
+[31mUnpermitted parameters: :password, :password_confirmation[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."reset_password_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["reset_password_token", "4fb45adc00920d85243a9696777ad8d2669f9ee1c8a2f681d031bb88d046e421"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 6ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 1501)
+
+
+Started GET "/rails/mailers/devise/mailer/reset_password_instructions" for ::1 at 2022-03-03 22:24:28 -0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"devise/mailer/reset_password_instructions"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 336)
+
+
+  
+AbstractController::ActionNotFound (Mailer preview 'devise/mailer/reset_password_instructions' not found):
+  
+railties (6.0.4.6) lib/rails/mailers_controller.rb:63:in `find_preview'
+activesupport (6.0.4.6) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.4.6) lib/active_support/callbacks.rb:181:in `block (2 levels) in halting_and_conditional'
+actionpack (6.0.4.6) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.4.6) lib/active_support/callbacks.rb:182:in `block in halting_and_conditional'
+activesupport (6.0.4.6) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.4.6) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.4.6) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.4.6) lib/active_support/callbacks.rb:110:in `block in run_callbacks'
+railties (6.0.4.6) lib/rails/mailers_controller.rb:97:in `block in set_locale'
+i18n (1.10.0) lib/i18n.rb:328:in `with_locale'
+railties (6.0.4.6) lib/rails/mailers_controller.rb:96:in `set_locale'
+activesupport (6.0.4.6) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+activesupport (6.0.4.6) lib/active_support/callbacks.rb:139:in `run_callbacks'
+actionpack (6.0.4.6) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.4.6) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.4.6) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.4.6) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.4.6) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.4.6) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.4.6) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.4.6) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.4.6) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.4.6) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.4.6) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.4.6) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.4.6) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.4.6) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.4.6) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.4.6) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.4.6) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.4.6) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.4.6) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.4.6) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.4.6) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.4.6) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.4.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.4.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.6) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.4.6) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.4.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.6) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.6) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.6) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.4.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.6) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.6) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+railties (6.0.4.6) lib/rails/engine.rb:527:in `call'
+puma (4.3.11) lib/puma/configuration.rb:228:in `call'
+puma (4.3.11) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.11) lib/puma/server.rb:472:in `process_client'
+puma (4.3.11) lib/puma/server.rb:328:in `block in run'
+puma (4.3.11) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2022-03-03 22:24:28 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.4.6) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.4.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.6) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.6) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.6) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.4.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.6) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.6) lib/action_dispatch/middleware/host_authorization.rb:103:in `call'
+railties (6.0.4.6) lib/rails/engine.rb:527:in `call'
+puma (4.3.11) lib/puma/configuration.rb:228:in `call'
+puma (4.3.11) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.11) lib/puma/server.rb:472:in `process_client'
+puma (4.3.11) lib/puma/server.rb:328:in `block in run'
+puma (4.3.11) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/rails/mailers/devise/mailer/reset_password_instructions" for ::1 at 2022-03-03 22:27:41 -0300
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"devise/mailer/reset_password_instructions"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/devise/mailer_preview.rb:3:in `reset_password_instructions'
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (Duration: 1.1ms | Allocations: 271)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 18.9ms
+  Rendering /home/silvio/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.4.6/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /home/silvio/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.4.6/lib/rails/templates/rails/mailers/email.html.erb (Duration: 13.3ms | Allocations: 2379)
+Completed 200 OK in 185ms (Views: 33.8ms | ActiveRecord: 10.5ms | Allocations: 33112)
+
+
+Started GET "/rails/mailers/devise/mailer/reset_password_instructions?part=text%2Fhtml" for ::1 at 2022-03-03 22:27:41 -0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"devise/mailer/reset_password_instructions"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/devise/mailer_preview.rb:3:in `reset_password_instructions'
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (Duration: 0.9ms | Allocations: 152)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 8.0ms
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 1)
+Completed 200 OK in 21ms (Views: 5.8ms | ActiveRecord: 0.6ms | Allocations: 3641)
+
+
+Started GET "/rails/mailers/devise/mailer/reset_password_instructions?part=text%2Fhtml&locale=pt-BR" for ::1 at 2022-03-03 22:27:48 -0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "locale"=>"pt-BR", "path"=>"devise/mailer/reset_password_instructions"}
+Started GET "/rails/mailers/devise/mailer/reset_password_instructions.html?locale=pt-BR" for ::1 at 2022-03-03 22:27:48 -0300
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/devise/mailer_preview.rb:3:in `reset_password_instructions'
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (Duration: 0.2ms | Allocations: 30)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 5.1ms
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 1)
+Completed 200 OK in 14ms (Views: 0.9ms | ActiveRecord: 2.3ms | Allocations: 3435)
+
+
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"locale"=>"pt-BR", "path"=>"devise/mailer/reset_password_instructions"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/devise/mailer_preview.rb:3:in `reset_password_instructions'
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (Duration: 0.2ms | Allocations: 30)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 2.8ms
+  Rendering /home/silvio/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.4.6/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /home/silvio/.asdf/installs/ruby/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.4.6/lib/rails/templates/rails/mailers/email.html.erb (Duration: 6.6ms | Allocations: 2263)
+Completed 200 OK in 18ms (Views: 8.1ms | ActiveRecord: 1.4ms | Allocations: 4618)
+
+
+Started GET "/rails/mailers/devise/mailer/reset_password_instructions.html?locale=pt-BR&part=text%2Fhtml" for ::1 at 2022-03-03 22:27:48 -0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"locale"=>"pt-BR", "part"=>"text/html", "path"=>"devise/mailer/reset_password_instructions"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/devise/mailer_preview.rb:3:in `reset_password_instructions'
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (Duration: 0.4ms | Allocations: 31)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 4.3ms
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 1)
+Completed 200 OK in 11ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 1937)
+
+
+ActionMailer::Base#mail: processed outbound mail in 2.1ms
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4928942863329062550)[0m
+  [1m[35m (40.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCategories (20220314232724)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (548.9ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220314232724"]]
+  [1m[35m (9.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (36.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4928942863329062550)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
